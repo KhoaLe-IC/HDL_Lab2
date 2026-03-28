@@ -1,0 +1,22 @@
+Các khối:
+Control unit: Điều khiển mạch
+FSM: Máy trạng thái
+3x3 generator: Lưu input và xuất ra 9 điểm ảnh
+Median filter: Median filter =]
+Line & column counter: Đếm số dòng và cột ở hiện tại
+Comparator: So sánh dòng & cột với kích thước của ảnh
+
+Tín hiệu điều khiển:
+WEn: Cho phép ghi dữ liệu vào
+REn: Cho phép đọc dữ liệu
+Shift_en: Tín hiệu dịch ma trận sang phải 1 cột
+Shift_row: Tín hiệu xuống dòng
+ReadAdress: Địa chỉ đọc dữ liệu
+En: Bật khối median
+End of row: cho biết đã đến dòng cuối
+End of column: cho biết đã đến cột cuối
+Reset: Reset lại median filter và khối đếm dòng & cột
+FSM_res: Reset lại FSM
+FSM_en: Cho phép FSM chuyển trạng thái
+
+Link drive: https://drive.google.com/drive/folders/1lg-LXyhMSB-Mp1wCBPlSP7i_p_mTgfNq?usp=sharing
