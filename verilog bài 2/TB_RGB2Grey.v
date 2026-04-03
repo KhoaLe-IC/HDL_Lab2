@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module TB_RGB2Grey();
     reg clk;
     reg [7:0] Valid_in;
@@ -14,7 +15,7 @@ module TB_RGB2Grey();
     Topmodule RGB2grey (.clk(clk), .valid_in(Valid_in), .valid_out(Valid_out), 
 						.brightness(brightness), .rgb_in(rgb_in), .gray_out(Gray_out));
     
-    always #10 clk = ~clk;
+    always #3 clk = ~clk;
     
     initial begin
         clk = 0;
@@ -40,7 +41,7 @@ module TB_RGB2Grey();
         
         Valid_in = 8'h00; 
         
-        #500
+        #100
         
         $fclose(File_id);
         $finish;
