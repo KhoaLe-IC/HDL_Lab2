@@ -52,49 +52,25 @@ module EdgeHandler #(
         p10 = pixel_10; p11 = pixel_11; p12 = pixel_12;
         p20 = pixel_20; p21 = pixel_21; p22 = pixel_22;
         if ((y_count == 1 && x_count >= 2) || (y_count == 2 && (x_count == 0 || x_count == 1))) begin  //Top-edge addressing
-            p00 = pixel_10; 
-            p01 = pixel_11;
-            p02 = pixel_12;
+            p00 = 0; 
+            p01 = 0;
+            p02 = 0;
         end
         else if ((y_count == height && x_count >= 2) || (y_count == height + 1 && (x_count == 0 || x_count == 1))) begin //Bottom-edge addressing
-            p20 = pixel_10;
-            p21 = pixel_11;
-            p22 = pixel_12;
+            p20 = 0;
+            p21 = 0;
+            p22 = 0;
         end
 
         if (x_count == 2) begin //Left-edge addresing
-            if (y_count == 1) begin
-                p00 = pixel_11;
-                p10 = pixel_11;
-                p20 = pixel_21;
-            end
-            else if (y_count == height) begin 
-                p00 = pixel_01;
-                p10 = pixel_11;
-                p20 = pixel_11;
-            end
-            else begin
-                p00 = pixel_01;
-                p10 = pixel_11;
-                p20 = pixel_21;
-            end
+            p00 = 0;
+            p10 = 0;
+            p20 = 0;
         end    
         else if (x_count == 1) begin //Right-edge addresing
-            if (y_count == 2) begin 
-                p02 = pixel_11;
-                p12 = pixel_11;
-                p22 = pixel_21;
-            end
-            else if (y_count == height + 1) begin 
-                p02 = pixel_01;
-                p12 = pixel_11;
-                p22 = pixel_11;
-            end
-            else begin 
-                p02 = pixel_01;
-                p12 = pixel_11;
-                p22 = pixel_21;
-            end
+            p02 = 0;
+            p12 = 0;
+            p22 = 0;
         end
     end
 
