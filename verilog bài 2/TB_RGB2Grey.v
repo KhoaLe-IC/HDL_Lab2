@@ -21,7 +21,7 @@ module TB_RGB2Grey();
         clk = 0;
         Valid_in = 0;
         rgb_in = 0;
-        brightness = 0; 
+        brightness = -30; 
     end
     
     initial begin
@@ -53,13 +53,3 @@ module TB_RGB2Grey();
         end
     end
 endmodule
-
-// Lý thuyết:
-// Cần 1365 xung clock để nạp dữ liệu, Pipeline 4 tầng nên trễ 4 chu kỳ
-// => Tổng chu kỳ lý thuyết là 1365 + 4= 1369
-// Với T = 6ns thì tổng thời gian: 1369 x 6 = 8214 ns
-// 
-// Mô phỏng: Thời gian là 8287 ns
-// Do ban đầu clock = 0, sau 3ns thì clock mới kích cạnh lên nên
-// thời gian nạp giá trị là: 3 + (1365 - 1) x 6 = 8187 ns
-// Thêm cái 100 ns delay cho xả hết dữ liệu trong pipeline nữa thì ra 8287 ns
