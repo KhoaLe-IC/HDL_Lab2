@@ -3,8 +3,7 @@ module RGBtoGray(clk, valid_in, rgb_in, brightness, gray_out);
 	input [23:0] rgb_in;
 	input signed [8:0] brightness;
 	output reg [7:0] gray_out;
-	
-	
+		
 	reg [18:0] Y;
 	reg [17:0] R;
 	reg [17:0] G;
